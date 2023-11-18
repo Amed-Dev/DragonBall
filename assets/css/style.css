@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-::selection{
+::selection {
   background-color: #e8772b;
 }
 body {
@@ -21,7 +21,7 @@ header {
   padding: 3rem;
 }
 
-h1 {
+.main-heading {
   color: #ffffff;
   font-size: 3em;
 }
@@ -35,7 +35,7 @@ nav ul {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  list-style: none;
+  list-style-type: none;
 }
 
 nav ul li {
@@ -47,44 +47,60 @@ nav ul li a {
   color: white;
   padding: 1rem;
   font-size: 1.2em;
+  transition: color 0.3s ease;
 }
-
+nav ul li a:hover {
+  color: #2c3e50;
+}
 main {
   padding: 1.25rem;
 }
 
-section {
+.saga-section {
   background: #2ecc71;
   padding: 1.25rem;
   margin: 1.25rem 0;
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(255, 233, 233, 0.2); /* Sombra ligera */
 }
-section h2 {
+.saga-section h2 {
   color: #ffffff;
   font-size: 2em;
   margin-bottom: 0.7rem;
 }
 
-section p {
+.saga-section :where(p, ol) {
   font-size: 1.2em;
   line-height: 1.5;
-  color: #ffffff;
+  color: #e4e4e4;
 }
 
-section img {
+.saga-section img {
   max-width: 100%;
   height: 400px;
   border-radius: 0.5rem;
   margin-top: 0.9rem;
+  transition: transform 0.3s ease;
 }
-
-section ol {
-  padding: 0 1.2rem;
-  font-size: 1.2rem;
+.saga-section img:hover {
+  transform: scale(1.1);
+}
+.saga-section ol {
+  padding: 0 0.7rem;
+  font-size: 1.1rem;
+  margin: 0.7rem 1.2rem;
+}
+#saga_sayayins .section-heading {
   color: #ffffff;
-  margin-top: 0.7rem;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
-footer {
+#saga_sayayins .section-sub_heading {
+  color: #ffffff;
+}
+
+#main-footer {
   background: #333;
   color: #ecf0f1;
   text-align: center;
@@ -92,4 +108,18 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+@media (width < 768px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  nav ul {
+    display: inline-block;
+  }
+  nav ul li {
+    margin: 0.6rem auto;
+    display: block;
+  }
 }
